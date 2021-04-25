@@ -9,10 +9,8 @@ export class ThreePhysicsComponent extends Scene3D {
   }
 
   async init() {
-    /*
     this.renderer.setPixelRatio(1)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
-    */
   }
 
   async preload() {
@@ -20,7 +18,7 @@ export class ThreePhysicsComponent extends Scene3D {
   }
 
   async create() {
-    /*
+
     // set up scene (light, ground, grid, sky, orbitControls)
     this.warpSpeed()
 
@@ -29,12 +27,21 @@ export class ThreePhysicsComponent extends Scene3D {
 
     //this.haveSomeFun()
     // enable physics debug
-    if (this.physics.debug) {
-      this.physics.debug.enable()
-    }
+    //if (this.physics.debug) {
+      //this.physics.debug.enable()
+    //}
 
     // add shape with physics
-    let box1 = this.physics.add.box({}, { phong: { color: 'green' } })
+    /*
+    let box1 = this.physics.add.box({ x: 0, y: 10 })
+    box1.position.set(0, 10, 0)
+
+    let staticbox = this.add.box({}, {phong: { color: 'yellow' }})
+    staticbox.position.set(0, 5, 0);
+    */
+   let sphere = this.physics.add.sphere({x:0, y:10, z:0});
+   sphere.body.setBounciness(0.5);
+    /*
     let sphere1 = this.physics.add.sphere({ y: 5, z: -3 }, { lambert: { color: 'yellow' } })
     let torus1 = this.physics.add.torus({ y: 1, z: 3, tube: 0.2, radialSegments: 16, tubularSegments: 16 }, { lambert: { color: 'orange' } })
 
@@ -61,6 +68,7 @@ export class ThreePhysicsComponent extends Scene3D {
     })
     let box2 = this.physics.add.box({ x: -10, z: 6 }, { phong: { color: 'red' } })
     box2.body.applyForceX(15)
+    */
 
     // compound objects
     let group = new THREE.Group()
@@ -97,10 +105,8 @@ export class ThreePhysicsComponent extends Scene3D {
   update() {
 
   }
-  */
-
 }
 
 // set your project configs
-//const config = { scenes: [ThreePhysicsComponent], antialias: true, gravity: { x: 0, y: -9.81, z: 0 } }
-//PhysicsLoader('/ammo', () => new Project(config))
+const config = { scenes: [ThreePhysicsComponent], antialias: true, gravity: { x: 0, y: -9.81, z: 0 } }
+PhysicsLoader('/ammo', () => new Project(config))
