@@ -9,8 +9,10 @@ export class ThreePhysicsComponent extends Scene3D {
   }
 
   async init() {
+    /*
     this.renderer.setPixelRatio(1)
     this.renderer.setSize(window.innerWidth, window.innerHeight)
+    */
   }
 
   async preload() {
@@ -18,6 +20,7 @@ export class ThreePhysicsComponent extends Scene3D {
   }
 
   async create() {
+    /*
     // set up scene (light, ground, grid, sky, orbitControls)
     this.warpSpeed()
 
@@ -94,9 +97,10 @@ export class ThreePhysicsComponent extends Scene3D {
   update() {
 
   }
+  */
 
 }
 
 // set your project configs
-const config = { scenes: [ThreePhysicsComponent], antialias: true, gravity: { x: 0, y: -9.81, z: 0 } }
-PhysicsLoader('/ammo', () => new Project(config))
+//const config = { scenes: [ThreePhysicsComponent], antialias: true, gravity: { x: 0, y: -9.81, z: 0 } }
+//PhysicsLoader('/ammo', () => new Project(config))
